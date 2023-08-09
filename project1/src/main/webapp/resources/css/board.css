@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+
+.write {
+	font-size: 1rem;
+	color: white;
+	font-family: 'Arial', sans-serif;
+	text-shadow: 0 0 1.5rem white, 0 0 3.5rem white, 0 0 5rem white, 0 0
+		7rem #ff00de, 0 0 8rem #ff00de, 0 0 10rem #ff00de, 0 0 12rem #ff00de,
+		0 0 15rem #ff00de;
+	text-align: center;
+}
+.menubar{
+	font-size: 1rem;
+	color: white;
+	font-family: 'Arial', sans-serif;
+	text-shadow: 0 0 1.5rem white, 0 0 3.5rem white, 0 0 5rem white, 0 0
+		7rem #ff00de, 0 0 8rem #ff00de, 0 0 10rem #ff00de, 0 0 12rem #ff00de,
+		0 0 15rem #ff00de;
+	display: flex;
+	justify-content: center; 
+	align-items : center;
+	padding: 10px;
+}
+span{
+	color: red; 
+	float: right;	
+	margin-right: 20px;
+	font-weight: bolder;
+	
+}
+
+.menubar a{
+	text-decoration: none;
+	font-size: 1rem;
+	color: white;
+	font-family: 'Arial', sans-serif;
+	text-shadow: 0 0 1.5rem white, 0 0 3.5rem white, 0 0 5rem white, 0 0
+		7rem #ff00de, 0 0 8rem #ff00de, 0 0 10rem #ff00de, 0 0 12rem #ff00de,
+		0 0 15rem #ff00de;
+	text-align: center;
+}
+.neon {
+	font-size: 5rem;
+	color: white;
+	font-family: 'Arial', sans-serif;
+	text-shadow: 0 0 1.5rem white, 0 0 3.5rem white, 0 0 5rem white, 0 0
+		7rem #ff00de, 0 0 8rem #ff00de, 0 0 10rem #ff00de, 0 0 12rem #ff00de,
+		0 0 15rem #ff00de;
+	text-align: center;
+}
+
+.hi {
+	margin: 0 auto;
+	width: 800px;
+	height: 50px;
+	font-size: 1.3rem;
+	font-family: 'Arial', sans-serif;
+	text-shadow: 0 0 0.1rem white, 0 0 0.3rem white, 0 0 0.5rem white, 0 0
+		1rem #ff00de, 0 0 2rem #ff00de, 0 0 3rem #ff00de, 0 0 5rem #ff00de, 0
+		0 10rem #ff00de;
+	
+}
+
+
+
+body {
+	background-color: black;
+
+}
+
+h1 {
+	color: white;
+}
+
+table {
+	margin: 0 auto;
+	width: 800px;
+	height: 500px;
+	color: white;
+	border: 3px solid white;
+	border-right: 3px solid white;
+}
+
+th {
+	font-family: 'Arial', sans-serif;
+	height: 50px;
+	color: white;
+	border-bottom: 3px solid white;
+}
+
+.neonText {
+	color: #fff;
+	text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px
+		#bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0
+		151px #bc13fe;
+}
+
+
+td {
+	color: white;
+	font-family: 'Arial', sans-serif;
+	text-align: center;
+	border-bottom: 2px dotted white;
+	border-right: 2px dotted white;
+	border-left: 2px dotted white;
+}
+
+.td1 {
+	width: 10%;
+}
+
+.td2 {
+	width: 20%;
+}
+
+.title {
+	text-align: center;
+}
+
+
+tr:hover {
+	background-color: #BDBDBD;
+	cursor: pointer;
+}

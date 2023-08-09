@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<update id="cdel" parameterType="Map">
+		UPDATE comments SET c_del=0
+		WHERE bno=#{bno } AND c_no=#{cno}
+		AND m_no=(SELECT m_no FROM members WHERE m_id=#{mid})
+	</update>
+
+	<select id="totalCount" resultType="Integer">
+		SELECT COUNT(*) FROM board
+	</select>
+
+
+
+	<select id="boardList" parameterType="pageDTO"
+		resultType="boardDTO">
+		SELECT *
+		FROM boardview
+		LIMIT #{firstRecordIndex},#{recordCountPerPage}
+	</select>
+
+
+	<!-- #{변수명}을 적어주면 변수가 들어가요 -->
+	<select id="detail" parameterType="boardDTO"
+		resultType="boardDTO">
+		SELECT *
+		FROM boardview
+		WHERE bno=#{bno}
+		<if test="m_id != null">
+			AND m_id=#{m_id}
+		</if>
+
+	</select>
+
+	<insert id="write" parameterType="boardDTO">
+		<!-- 서브쿼리 : 쿼리속에 쿼리가 들어가요 -->
+		INSERT INTO board (btitle,
+		bcontent, m_no, bip, uuid)
+		VALUES(#{btitle},
+		#{bcontent}, (SELECT m_no FROM members WHERE m_id=#{m_id}), #{bip},
+		#{uuid} );
+
+	</insert>
+
+	<update id="delete" parameterType="boardDTO">
+		UPDATE board SET bdel=0
+		WHERE
+		bno=#{bno} AND m_no=(SELECT m_no FROM members WHERE m_id=#{m_id})
+	</update>
+
+	<update id="edit" parameterType="boardDTO">
+		UPDATE board SET
+		btitle=#{btitle}, bcontent=#{bcontent}
+		WHERE bno=#{bno}
+	</update>
+
+	<update id="likeUp" parameterType="boardDTO">
+		UPDATE board SET blike = blike
+		+1
+		WHERE bno=#{bno }
+	</update>
+
+	<select id="commentsList" parameterType="Integer"
+		resultType="map">
+		SELECT * FROM commentsview WHERE bno=#{bno}
+	</select>
+
+	<update id="cedit" parameterType="Map">
+		UPDATE comments SET c_comment=#{recomment }
+		WHERE bno=#{bno } AND c_no=#{cno } AND m_no=(SELECT m_no FROM members WHERE
+		m_id=#{mid })
+	</update>
+</mapper>
